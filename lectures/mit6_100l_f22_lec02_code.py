@@ -7,7 +7,7 @@ d = a + " " + b
 silly = a * 3
 
 s = "abc"
-len(s) 
+len(s)
 
 ## TYPE THIS IN THE CONSOLE -- INDEXING ##
 s = "abc"
@@ -22,15 +22,15 @@ s[-3]
 ## TYPE THIS IN THE CONSOLE -- SLICING ##
 s = "abcdefgh"
 s[3:6]
-s[3:6:2] 
+s[3:6:2]
 s[:]
-s[::-1] 
+s[::-1]
 s[4:1:-2]
 
 ## TYPE THIS IN THE CONSOLE - MANIPULATION ##
 s = "car"
 #s[0] = 'b'  # this is an error
-s = 'b'+s[1:len(s)] 
+s = 'b'+s[1:len(s)]
 
 #########################################
 ############### LECTURE ##########################
@@ -66,7 +66,7 @@ c = "musketeers"
 # print(5*num2)
 
 ############## YOU TRY IT ###############
-# Write a program that: 
+# Write a program that:
 # * Asks the user for a verb.
 # * Prints "I can _ better than you" where you replace _ with the verb.
 # * Then prints the verb 5 times in a row separated by spaces.
@@ -110,7 +110,7 @@ print(((str + ' ') * 5)[:len((str + ' ') * 5) - 1])
 
 ############## YOU TRY IT ###############
 # Write a program that:
-# * Saves a secret number. 
+# * Saves a secret number.
 # * Asks the user for a number guess.
 # * Prints a bool depending on whether the guess matches the secret.
 
@@ -118,7 +118,7 @@ print(((str + ' ') * 5)[:len((str + ' ') * 5) - 1])
 secret = 5
 user_guess = input('Please enter an integer you guess: ')
 print(int(user_guess) == secret)
-    
+
 
 #########################################
 
@@ -180,9 +180,9 @@ print(int(user_guess) == secret)
 
 ############## YOU TRY IT ###############
 # Write a program that:
-# * Saves a secret number. 
+# * Saves a secret number.
 # * Asks the user for a number guess.
-# * Prints whether the guess is too low, too high, or the same as the secret. 
+# * Prints whether the guess is too low, too high, or the same as the secret.
 
 # your code here
 secret = 31
@@ -205,19 +205,19 @@ else:
 ############### AT HOME ###################
 #########################################
 # Practice 1: What is the value of s1 and s2?
-s1 = "a" + "b"
+s1 = "a" + "b"  #ab
 
 d = "hi"
 e = " ana"
 s2 = d + 2*e
-
+#ANSWER: s1 = 'ab', s2 = 'hi ana ana'
 
 # Practice 2: What are the substrings of s?
 s = "ABC d3f ghi"
-s[0:3:1]
-s[0:4]
-s[8:len(s):3]
-s[2::-1]
+s[0:3:1]    #ANS: substr = 'ABC'
+s[0:4]  #ANS: substr = 'ABC '
+s[8:len(s):3]   #ANS: substr = 'g'
+s[2::-1]    #ANS: substr = 'CBA'
 
 
 # Practice 3: What does this print?
@@ -234,7 +234,8 @@ s[2::-1]
 # else:
 #     answer += "\ny is smaller"
 # print(answer)
-
+    #ANS: when y = 2, print a blank line and print 'y is smaller' in the next line;
+    #ANS: when y = 12, print 'x / y is 5.5'
 
 
 # Practice 4: Uncomment the code below and:
@@ -242,13 +243,25 @@ s[2::-1]
 # What does it print when a = "1" and b = 1
 # What does it print when a = 3 and b = 3
 # What does it print when a = "1" and b = "1"
+a = '1'
+b = '1'
 
-# if ( a == int(b) ):
-#     print("int conversion")
-# if ( a == int(b) ) and ( str(a) == b ):
-#     print("int and str conversion")
-# else: 
-#     print("interesting")
+if ( a == int(b) ):
+    print("int conversion")
+if ( a == int(b) ) and ( str(a) == b ):
+    print("int and str conversion")
+else:
+    print("interesting")
+
+# int conversion
+# int and str conversion
+
+# interesting
+
+# int conversion
+# interesting
+
+# interesting
     
 #########################################
 ############### END AT HOME ##########################
