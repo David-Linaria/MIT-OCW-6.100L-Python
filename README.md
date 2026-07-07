@@ -3,4 +3,4 @@ This is a small repo that is saved as a recording of my studying process.
 
 Hope I can quickly get familiar with this language.
 
-*Hope*, I guess.
+*Hope*, I guess. 🤓
