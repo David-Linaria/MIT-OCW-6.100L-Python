@@ -25,17 +25,16 @@ steps = 0
 
 if initial_deposit >= cost_of_house * down_payment_percentage - 100:
     r = 0.0
-else:
-    if amount_saved < cost_of_house * down_payment_percentage:
+elif amount_saved < cost_of_house * down_payment_percentage:
         r = None
-    else:
+else:
+    r = (low + high) / 2
+    steps += 1
+    while abs(cost_of_house * down_payment_percentage - amount_saved) > 100:
+        if amount_saved > cost_of_house * down_payment_percentage:
+            high = r
+        else:
+            low = r
         r = (low + high) / 2
+        amount_saved = initial_deposit * (1 + r / 12) ** months
         steps += 1
-        while abs(cost_of_house * down_payment_percentage - amount_saved) > 100:
-            if amount_saved > cost_of_house * down_payment_percentage:
-                high = r
-            else:
-                low = r
-            r = (low + high) / 2
-            amount_saved = initial_deposit * (1 + r / 12) ** months
-            steps += 1
