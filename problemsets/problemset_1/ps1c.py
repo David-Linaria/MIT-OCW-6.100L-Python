@@ -16,7 +16,7 @@ down_payment_percentage = 0.25
 months = 36
 low = 0
 high = 1
-r = (low + high) / 2
+r = 1
 amount_saved = initial_deposit * (1 + r / 12) ** months
 steps = 0
 ##################################################################################################
@@ -26,7 +26,7 @@ steps = 0
 if initial_deposit >= cost_of_house * down_payment_percentage - 100:
     r = 0.0
 else:
-    if initial_deposit * (1 + 1 / 12) ** months < cost_of_house * down_payment_percentage:
+    if amount_saved < cost_of_house * down_payment_percentage:
         r = None
     else:
         r = (low + high) / 2
