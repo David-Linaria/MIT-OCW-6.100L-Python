@@ -29,3 +29,9 @@
 # return_str()
 # print(return_str())
 # # from this example we can see that returning a sentence is valid in python, and it could be called in print().
+
+# tup1 = [9, 3, 3, 1]
+# tup2 = [1, 4, 6, 4]
+# for i in range(len(tup1)):
+#     temp = tup1[i] * tup2[i]
+#     print(temp)
