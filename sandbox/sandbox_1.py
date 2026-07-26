@@ -35,3 +35,7 @@
 # for i in range(len(tup1)):
 #     temp = tup1[i] * tup2[i]
 #     print(temp)
+
+line = 'abcdefg'
+newl = line[6::-1]
+print(f'{newl}')
