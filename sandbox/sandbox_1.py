@@ -36,6 +36,6 @@
 #     temp = tup1[i] * tup2[i]
 #     print(temp)
 
-line = 'abcdefg'
-newl = line[6::-1]
-print(f'{newl}')
+# line = 'abcdefg'
+# newl = line[6::-1]
+# print(f'{newl}')
