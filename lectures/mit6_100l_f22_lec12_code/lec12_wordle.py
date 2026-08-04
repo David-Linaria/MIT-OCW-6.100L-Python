@@ -525,13 +525,16 @@ def is_a_real_word(s, word_list):
     """ s is a string
         word_list is a list of words
     Returns True is s is in word_list and False otherwise """
-    return (s in word_list)
+    if s in word_list:
+        return True
+    else:
+        return False
 
 def is_correct_len(guess, length):
     """ guess is a str
         length is an int
     Returns True if guess has length number of characters. """
-    return (len(guess) == length)
+    return len(guess) == length
 
 def make_wordle(guess, secret):
     """ guess and secret are 6 letter words
@@ -567,7 +570,7 @@ def play_game():
        user is presented with "ST   k".
     3) The user has 6 guesses to guess the secret word. """
     word_list = get_word_list(words)
-    secret = new_word
+    secret = new_word(words)
     wordle_len = 6
     n_guesses = 6
     win = False
@@ -576,22 +579,26 @@ def play_game():
     guess = input("Guess: ")
     
     while guess != secret:
-        # if is_a_real_word(guess, word_list) and is_correct_len(guess, wordle_len):
-        #     result = make_wordle(guess, secret)
-        #     print(result)
-        #     n_guesses -= 1
-        # else:
-        #     print("Not a word or not the correct length.")
+        if is_a_real_word(guess, word_list) and is_correct_len(guess, wordle_len):
+            result = make_wordle(guess, secret)
+            print(result)
+            n_guesses -= 1
+        else:
+            print("Not a word or not the correct length.")
+
         result = make_wordle(guess, secret)
         print(result)
         print(f"You have {n_guesses} guesses left.")
-        if n_guesses > 0:
-            guess = input("Guess: ")
-        elif guess == secret:
+
+        if guess == secret:
             win = True
             break
+        elif n_guesses > 0:
+            guess = input("Guess: ")
+            continue
         else:
             break
+
     if win:
         print('YOU WIN')
     else:
