@@ -198,7 +198,7 @@ def is_pal(x):
 L = ['abc', 'm', 'p', 'xyz', '123', 57]
 
 
-## There is a file lec12_wordle.py that is buggy!
+## There is a file mit6_100l_f22_lec12_code2.py that is buggy!
 ## Try to fix the code to play the game correctly
 ###################################
 
