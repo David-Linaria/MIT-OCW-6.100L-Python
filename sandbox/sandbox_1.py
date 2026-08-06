@@ -37,5 +37,46 @@
 #     print(temp)
 
 # line = 'abcdefg'
-# newl = line[6::-1]
-# print(f'{newl}')
+# # newl = line[6::-1]
+# # print(f'{newl}')
+#
+# def sum_digits(s):
+#     total = 0
+#     for char in s:
+#         if char in '0123456789':
+#             total += int(char)
+#     return total
+#
+# def sum_digits(s):
+#     total = 0
+#     for char in s:
+#         try:
+#             charinint = int(char)
+#             total += charinint
+#         except:
+#             print(f'Invalid input: {char}')
+#             continue
+#         else:
+#             print('No error occurred.')
+#         finally:
+#             print('Present Loop Finished.')
+#     return total
+#
+# sum_digits('1234')
+# print(sum_digits('shi34h5u'))
+
+# def sum_digits_except(s):
+#     """ s is a non-empty string containing digits
+#     Returns sum of all characters that are digits """
+#     total = 0
+#     for char in s:
+#         try:
+#             val = int(char)
+#             total += val
+#         except:
+#             print("couldn't convert character", char)
+#             # will iterate as usual, not breaking
+#     return total
+#
+# print(sum_digits_except("123"))
+# print(sum_digits_except("123abc"))

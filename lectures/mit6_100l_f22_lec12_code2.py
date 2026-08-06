@@ -519,7 +519,7 @@ def new_word(words):
 def get_word_list(words_str):
     """ words_str is a multi-line string.
     Returns a list whose elements are lowercase words """
-    return words.split('\n')
+    return words_str.lower().split('\n')
 
 def is_a_real_word(s, word_list):
     """ s is a string
@@ -537,26 +537,25 @@ def is_correct_len(guess, length):
     return len(guess) == length
 
 def make_wordle(guess, secret):
-    """ guess and secret are 6 letter words
-    Returns a result where:
-    * a guess' letter in the correct place is capitalized
-    * a guess' letter in the secret but not in the correct place is lowercase
-    * a guess' letter not in the secret is not shown 
-    For example: if guess is "struck" and the secret is "strike" 
-    then the return is "ST   k"
-    """
-    result = ""
-    guessed = []
+    result = [' '] * len(secret)
+    remaining = list(secret)
+
+    # First pass: exact matches
     for i in range(len(secret)):
         if guess[i] == secret[i]:
-            result += guess[i].upper()
-            guessed.append(guess[i])
-        elif guess[i] in secret:
-            result += guess[i]
-        else:
-            result += ' '
-    return result
- 
+            result[i] = guess[i].upper()
+            remaining[i] = None
+
+    # Second pass: misplaced matches
+    for i in range(len(secret)):
+        if result[i] == ' ' and guess[i] in remaining:
+            result[i] = guess[i].lower()
+            matched_index = remaining.index(guess[i])
+            remaining[matched_index] = None
+
+    return ''.join(result)
+print(make_wordle('planet', 'letter'))
+
 def play_game():
     """ Plays the game.
     0) Generates a word_list, a new secret word, and sets up 6 guesses.
@@ -578,7 +577,7 @@ def play_game():
     print(f"You have {n_guesses} to guess a 6-letter word.")
     guess = input("Guess: ")
     
-    while guess != secret:
+    while n_guesses > 0:
         if is_a_real_word(guess, word_list) and is_correct_len(guess, wordle_len):
             result = make_wordle(guess, secret)
             print(result)
@@ -603,8 +602,6 @@ def play_game():
         print('YOU WIN')
     else:
         print('YOU LOSE')
-
-play_game()
 
 
 
@@ -696,7 +693,7 @@ def play_game():
     else:
         print('YOU LOSE')
     
-# play_game()
+play_game()
 
 
 
