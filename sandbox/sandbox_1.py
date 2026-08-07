@@ -80,3 +80,18 @@
 #
 # print(sum_digits_except("123"))
 # print(sum_digits_except("123abc"))
+
+# def list_add(l1):
+#     """
+#     :param l1: a list with only integer as elements, but we do not know the inside structure. for example, it can be a list containing lists.
+#     :return: the sum of all integers in list l1.
+#     """
+#     if len(l1) == 0:
+#         return 0
+#     else:
+#         try:
+#             return l1[0] + list_add(l1[1:len(l1):1])
+#         except:
+#             return list_add(l1[0]) + list_add(l1[1:len(l1):1])
+#
+# print(list_add([[2, [1, 0, 3]], 1, [5, 2, 2]]))
