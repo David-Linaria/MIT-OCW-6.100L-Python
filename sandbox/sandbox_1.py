@@ -95,3 +95,5 @@
 #             return list_add(l1[0]) + list_add(l1[1:len(l1):1])
 #
 # print(list_add([[2, [1, 0, 3]], 1, [5, 2, 2]]))
+
+print(0.631 % 0.01)
