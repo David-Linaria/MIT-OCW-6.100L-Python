@@ -96,4 +96,11 @@
 #
 # print(list_add([[2, [1, 0, 3]], 1, [5, 2, 2]]))
 
-print(0.631 % 0.01)
+# print(0.631 % 0.01)
+
+# class T(object):
+#     def __init__(self, num):
+#         self.num = num
+#
+# t = T(3)
+# print(t.num)
