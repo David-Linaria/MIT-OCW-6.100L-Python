@@ -151,8 +151,9 @@ end = '9/30/2021 1:45 PM'
 # end = 'September, 30, 2021 1:45pm'
 
 # # convert the strings to datetime objects
-# start_date = parser.parse(start)
-# end_date = parser.parse(end)
+start_date = parser.parse(start)
+end_date = parser.parse(end)
+# print(start_date)
 # print(f'type of start_date: {type(start_date)}')
 # print(f'type of end_date: {type(end_date)}')
 
@@ -442,16 +443,22 @@ def total_elapsed_time(L):
         e2 occurs later in time than e1
     Consider the elapsed time for a tuple to be the difference between e2 and e1.
     Returns the sum of all the elapsed times, in seconds, in L. """
-    pass
+    sum_elapsed = 0
+    for ele in L:
+        start_time = parser.parse(ele[0])
+        end_time = parser.parse(ele[1])
+        sum_elapsed += (end_time - start_time).total_seconds()
+
+    return int(sum_elapsed)
     
-# t1 = '1/1/2021 2:00 PM'
-# t2 = '1/1/2021 2:05 PM'
-# t3 = '3/12/2021 1:22 PM'
-# t4 = '3/12/2021 1:32 PM'
-# t5 = '7/13/2021 6:00 PM'
-# t6 = '7/13/2021 6:02 PM'
-# L = [(t1, t2), (t3, t4), (t5, t6)]  # 5min + 10min + 2min = 1020 sec
-# print(total_elapsed_time(L))    # prints 1020
+t1 = '1/1/2021 2:00 PM'
+t2 = '1/1/2021 2:05 PM'
+t3 = '3/12/2021 1:22 PM'
+t4 = '3/12/2021 1:32 PM'
+t5 = '7/13/2021 6:00 PM'
+t6 = '7/13/2021 6:02 PM'
+L = [(t1, t2), (t3, t4), (t5, t6)]  # 5min + 10min + 2min = 1020 sec
+print(total_elapsed_time(L))    # prints 1020
     
 #############################################
 
